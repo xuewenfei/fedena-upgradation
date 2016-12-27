@@ -38,7 +38,7 @@ class Observation < ActiveRecord::Base
   has_many :cce_reports, as: :observable
   has_many :observations, through: :observation_group
 
-  has_one :next_record ->(obj) { observations.where('order > ?', obj.order) }
+  has_one :next_record, ->(obj) { observations.where('order > ?', obj.order) }
 
   accepts_nested_attributes_for :descriptive_indicators
 
