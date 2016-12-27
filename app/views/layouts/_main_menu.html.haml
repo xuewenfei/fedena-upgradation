@@ -19,18 +19,18 @@
 - arrow_dir = rtl? ? "◀" : "▶"
 %ul#main-menu
   %li.a
-    = link_to t('dashboard_text'), controller: :users, action: :dashboard
+    = link_to t('dashboard_text'), controller: :users, action: :dashboard, class: "yay-sub-toggle waves-effect waves-blue"
   - if permitted_to? :index, :students
     %li.a
       = link_to t('students'), controller: :students, action: :index
   - if @current_user.admin?
     %li.a
-      = link_to "#{t('attendance')} ▼", controller: :student_attendance, action: :index
+      = link_to "#{t('attendance')}", controller: :student_attendance, action: :index, class: "yay-sub-toggle waves-effect waves-blue"
       %ul.level-1
         %li
-          = link_to t('attendance_register'), controller: :attendances, action: :index
+          = link_to t('attendance_register'), controller: :attendances, action: :index, class: "waves-effect waves-blue"
         %li
-          = link_to t('attendance_report'), controller: :attendance_reports, action: :index
+          = link_to t('attendance_report'), controller: :attendance_reports, action: :index, class: "waves-effect waves-blue"
   - elsif @current_user.employee?
     - @employee = @current_user.employee_record
     - @employee_subjects = @employee.subjects.collect(&:id)

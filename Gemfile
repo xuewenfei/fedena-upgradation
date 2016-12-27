@@ -1,11 +1,12 @@
-source 'https://rubygems.org'
+#source 'https://rubygems.org'
+source 'https://ruby.taobao.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2'
 # Use sqlite3 as the database for Active Record
-# gem 'mysql2'
-gem 'pg'
+gem 'mysql2', '0.3.21'
+#gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -13,10 +14,11 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-gem 'therubyracer', platforms: :ruby
+gem 'therubyracer',  '~> 0.12.2'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -58,6 +60,9 @@ gem 'factory_girl_rails'
 # The controller-level `respond_to' feature has been extracted to the `responders` gem. Add it to your Gemfile to continue using this feature
 gem 'responders', '~> 2.0'
 gem 'annotate', '~> 2.6.6'
+#gem "libv8", github: "cowboyd/libv8", submodules: true
+#gem "libv8", "~> 5.3.332.38.3"
+gem "eventmachine"
 
 group :development do
   gem 'pry'

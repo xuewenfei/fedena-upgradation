@@ -146,7 +146,7 @@ class UsersController < ApplicationController
     if  session[:user_id].present? and @first_time_login == "1" and @user.is_first_login != false
       redirect_to first_login_change_password_user_path(@user.username), notice: t('first_login_attempt')
     end
-    render layout: 'dashboard'
+    render layout: 'application'
   end
 
 
